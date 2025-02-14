@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>L&T Virtual Assistant</title>
+
+            <!-- Link to CSS file -->
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/markdown_styles.css') }}" />
+      </head>
+      <body>
+            <div class="color-mode-toggle-container">
+                  <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                  </label>
+            </div>
+            
+
+            <!-- Toggle Button -->
+            <div id="toggleButton" class="toggle-button" onclick="toggleContainer()">
+                  <img src="{{ url_for('static', filename='images/bot.svg') }}" alt="Toggle Icon">
+            </div>
+
+            <!-- Container to Show/Hide -->
+            <div id="toggleContainer" class="toggle-container" style="display: none;">
+                  <div class="chat-header">
+                        <button class="clear-button" onclick="eraseConversations()">
+                              <img src="{{ url_for('static', filename='images/eraser.svg') }}" />
+                        </button>
+                        <button class="close-button" onclick="toggleContainer()">
+                              <img src="{{ url_for('static', filename='images/cross.svg') }}" />
+                        </button>
+                  </div>
+                  <!-- Your container content here -->
+                  <div class="container">
+                        <div class="chat-container hide-scrollbar" id="chat-container"></div>
+                        <div class="input-container">
+                              <div class="input-bar">
+                                    <div id="userInput" class="input-box" contenteditable="true" placeholder="Type your message..." onkeypress="handleKeyPress(event)" onpaste="handlePaste(event)"></div>
+                              </div>
+                              <div class="input-options">
+                                    <button id="sendButton" class="send-button" onclick="sendMessageFromInputBar()">
+                                          <img class="send-icon" id="sendIcon" src="{{ url_for('static', filename='images/arrow-left.svg') }}" />
+                                    </button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- Link to JavaScript file -->
+            <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      </body>
+</html>
