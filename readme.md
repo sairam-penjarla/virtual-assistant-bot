@@ -1,126 +1,111 @@
-[![Website](https://img.shields.io/badge/Website-Visit-brightgreen)](https://psairam9301.wixsite.com/website) 
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red)](https://www.youtube.com/@sairampenjarla) 
-[![GitHub](https://img.shields.io/badge/GitHub-Explore-black)](https://github.com/sairam-penjarla) 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sairam-penjarla-b5041b121/) 
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-ff69b4)](https://www.instagram.com/sairam.ipynb/)
+# [![Website](https://img.shields.io/badge/Website-Visit-brightgreen)](https://psairam9301.wixsite.com/website) [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red)](https://www.youtube.com/@sairampenjarla) [![GitHub](https://img.shields.io/badge/GitHub-Explore-black)](https://github.com/sairam-penjarla) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sairam-penjarla-b5041b121/) [![Instagram](https://img.shields.io/badge/Instagram-Follow-ff69b4)](https://www.instagram.com/sairam.ipynb/)
 
-# 📌 PDF-RAG AI Chatbot
+# 🔹 Virtual Assistant Chatbot with RAG Backend
 
-An AI chatbot built using **Retrieval-Augmented Generation (RAG)**, OpenAI, Flask, Python, and ChromaDB. The chatbot is designed to answer questions based on a structured knowledge base created from publicly available PDFs and web pages related to **L&T Construction Company**.
+A powerful virtual assistant chatbot built using OpenAI, ChromaDB, and Flask, designed to intelligently answer questions based on a structured knowledge base.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation & Setup
+
+Follow these steps to set up and run the project locally.
 
 ### 1️⃣ Clone the Repository
 
-```sh
-git clone https://github.com/sairam-penjarla/pdf-rag-ai-chatbot.git
-cd pdf-rag-ai-chatbot
+```bash
+git clone https://github.com/sairam-penjarla/virtual-assistant-bot.git
+cd virtual-assistant-bot
 ```
 
-### 2️⃣ Create a Virtual Environment
+### 2️⃣ Set Up a Virtual Environment
 
-Follow this blog post for setting up a **virtual environment** or **Anaconda environment**:  
-🔗 [Environment Setup Guide](https://sairampenjarla.notion.site/Environment-171d56a2fc2780dd9efcd4cef331fa2c)
+Follow this guide on creating a virtual environment:  
+🔗 [How to Create a Virtual Environment](https://sairampenjarla.notion.site/Environment-171d56a2fc2780dd9efcd4cef331fa2c)
 
-For a virtual environment:
-```sh
+#### Using `venv` (Python's Built-in Virtual Environment)
+```bash
 python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate      # On Windows
+source venv/bin/activate   # For macOS/Linux
+venv\Scripts\activate      # For Windows
 ```
 
-For an Anaconda environment:
-```sh
-conda create --name rag-chatbot python=3.9
-conda activate rag-chatbot
+#### Using Anaconda
+```bash
+conda create --name chatbot_env python=3.9
+conda activate chatbot_env
 ```
 
 ### 3️⃣ Install Dependencies
-
-```sh
+```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Set Up API Key
-
-Create a `.env` file in the project root and add your **OpenAI API Key**:
+### 4️⃣ Set Up OpenAI API Key  
+Create a `.env` file in the root directory and add your OpenAI API key:
 
 ```
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 ### 5️⃣ Run the Project
-
-```sh
+```bash
 python app.py
 ```
 
-The application will be available at `http://localhost:5000`.
+The chatbot will now be available on `http://localhost:5000/`.
 
 ---
 
 ## 📌 Project Overview
 
-### 🔹 Features
-- Uses **RAG** to fetch relevant data from a **ChromaDB knowledge base**.
-- Chatbot is trained using publicly available **PDFs and web pages** about **L&T Construction**.
-- Users can ask questions, and the bot retrieves and generates accurate responses.
-- Provides **reference links** for every answer.
-- **Session management**: Previous chat sessions are stored and can be revisited via the sidebar.
-- **Smart Prompt Engineering**: Detects irrelevant or inappropriate queries and responds accordingly.
-- Built with **Flask, OpenAI API, SQLite, JavaScript, HTML, and CSS**.
-- Uses **streaming responses** for a natural typing effect.
-- Displays a **loading animation** while processing responses.
-- **Sidebar with session history** and delete options for individual sessions or all at once.
-- Uses **Lucide.dev icons** for an aesthetic UI.
+This project is a virtual assistant chatbot that interacts with users through a web interface. The chatbot utilizes a **Retrieval-Augmented Generation (RAG) backend**, combining **OpenAI, ChromaDB, and sentence transformers** to generate intelligent responses.
 
-### 🔹 How It Works
-1. The user submits a question.
-2. The backend queries **ChromaDB** to retrieve relevant content.
-3. The retrieved content + question is sent to OpenAI’s API.
-4. The response is streamed back **word by word** for a natural effect.
-5. The session and responses are stored in an **SQLite database**.
-6. Users can click on previous sessions in the sidebar to revisit past chats.
+### 🔥 Features
 
-### 🔹 Architecture Diagram
-📌 **How the chatbot processes user requests**  
-![Architecture Diagram](media/architecture%20Diagram.png)  
-
-**Description**:  
-- The user submits a request → `get_relevant_content` fetches data from the knowledge base.  
-- The retrieved content is sent to `invoke_agent`, which calls OpenAI’s API.  
-- The response is streamed back to the frontend.  
-- After completion, the session is updated in the database via `update_session`.  
+- 💬 **Toggle Chatbot Window** – The chatbot remains hidden until the user clicks on the chat icon.
+- 🗑️ **Erase Conversations** – Users can clear previous interactions with one click.
+- 🔍 **Knowledge-Based Responses** – Answers are sourced from structured L&T Construction data.
+- 🔗 **Reference Links** – The chatbot cites sources for transparency.
+- ⏳ **Loading Animation** – Smooth user experience with real-time response streaming.
+- 🚫 **Inappropriate Question Handling** – Well-engineered prompts ensure the chatbot responds politely to irrelevant queries.
+- 🎨 **Dark Mode & Light Mode Support**
+- 🛠️ **Built with**:
+  - `OpenAI API`
+  - `ChromaDB`
+  - `Flask`
+  - `Python`
+  - `SQLite`
+  - `HTML, CSS, JavaScript`
 
 ---
 
-## 📌 Screenshots
+## 🖼️ Screenshots
 
-| Screenshot | Description |
-|------------|------------|
-| ![Welcome Screen](media/screenshot_6.png) | **Welcome screen** |
-| ![Chatbot Response (Light Mode)](media/screenshot_2.png) | **How chatbot responses look in light mode** |
-| ![Previous Sessions](media/screenshot_5.png) | **Sidebar showing previous sessions** |
-| ![Loading Animation](media/screenshot_1.png) | **Loading animation while processing input** |
-| ![Dark Mode UI](media/screenshot_4.png) | **Chatbot UI in dark mode** |
-| ![References Expanded](media/screenshot_3.png) | **Expanded reference section** |
-
----
-
-## 📌 Blog Article
-For a detailed breakdown of the project, visit the blog post:  
-🔗 **[RAG AI Chatbot – Full Guide](https://sairampenjarla.notion.site/RAG-AI-Chatbot-18dd56a2fc27803e91c7d76dbcb8d2b9)**
+| **Description** | **Screenshot** |
+|:--------------|:--------------:|
+| **1. Blank Webpage** - The chatbot icon and toggle button are displayed, but the chat window is hidden. | ![Blank Webpage](media/screenshot_1.png) |
+| **2. Chatbot Window Opened** - The conversation window pops up when the user clicks on the chatbot icon. | ![Chatbot Window](media/screenshot_2.png) |
+| **3. Loading Animation** - A loading animation appears before the chatbot starts generating a response. | ![Loading Animation](media/screenshot_3.png) |
+| **4. Light Mode Conversation with Loading Animation** - The chatbot is generating a response while in light mode. | ![Light Mode with Loading](media/screenshot_4.png) |
+| **5. Light Mode Conversation** - A complete chatbot response in light mode, including reference links. | ![Light Mode Response](media/screenshot_5.png) |
+| **6. Dark Mode Conversation** - A conversation displayed in dark mode. | ![Dark Mode Conversation](media/screenshot_6.png) |
+| **7. Dark Mode with Loading Animation** - Another chatbot response in dark mode while loading. | ![Dark Mode with Loading](media/screenshot_7.png) |
 
 ---
 
-## 📌 Connect with Me
+## 📖 Architecture Diagram
 
-[![Website](https://img.shields.io/badge/Website-Visit-brightgreen)](https://psairam9301.wixsite.com/website)  
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red)](https://www.youtube.com/@sairampenjarla)  
-[![GitHub](https://img.shields.io/badge/GitHub-Explore-black)](https://github.com/sairam-penjarla)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sairam-penjarla-b5041b121/)  
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-ff69b4)](https://www.instagram.com/sairam.ipynb/)  
+![Architecture](media/architecture.png)
 
-🚀 **Star the repo if you found this useful!**  
+---
+
+## 📚 Learn More
+
+🔗 **GitHub Repository:** [Virtual Assistant Bot](https://github.com/sairam-penjarla/virtual-assistant-bot/)  
+🔗 **Project Blog Post:** [Read More](https://sairampenjarla.notion.site/Virtual-Assistant-19ad56a2fc27802984c5e0287e4aec30?pvs=4)  
+
+---
+
+## ✨ Connect with Me!
+
+[![Website](https://img.shields.io/badge/Website-Visit-brightgreen)](https://psairam9301.wixsite.com/website)   [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red)](https://www.youtube.com/@sairampenjarla)   [![GitHub](https://img.shields.io/badge/GitHub-Explore-black)](https://github.com/sairam-penjarla)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sairam-penjarla-b5041b121/)   [![Instagram](https://img.shields.io/badge/Instagram-Follow-ff69b4)](https://www.instagram.com/sairam.ipynb/)  

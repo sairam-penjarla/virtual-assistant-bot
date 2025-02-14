@@ -1,0 +1,5 @@
+.env
+sessions.db
+knowledge_base/
+.DS_Store
+media/.DS_Store
