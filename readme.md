@@ -4,6 +4,8 @@
 
 A powerful virtual assistant chatbot built using OpenAI, ChromaDB, and Flask, designed to intelligently answer questions based on a structured knowledge base.
 
+🔗 [Demo Video](https://youtu.be/G8PiPLIsBJA?si=56FAdRbMewBG9eR5)
+
 ---
 
 ## 🚀 Installation & Setup

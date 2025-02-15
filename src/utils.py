@@ -39,12 +39,7 @@ class Utilities:
         self.session_utils = SessionUtilities()
 
         # Initialize OpenAI client for interacting with the LLM
-        TOKEN = os.environ.get('TOKEN')
-        HOST = os.environ.get('HOST')
-        self.client = OpenAI(
-            api_key = TOKEN,
-            base_url = f"{HOST}/serving-endpoints"
-        )
+        self.client = OpenAI()
 
         # Setup persistent ChromaDB client and embedding collection
         self.chroma_client = chromadb.PersistentClient(path="knowledge_base")
